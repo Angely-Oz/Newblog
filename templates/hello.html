@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body%}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-success">Всем привет! Я - Ярослава!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4 text-success">Этот сайтик про меня специально для меня сделала моя мама!</p>
+        <style>
+.btn{
+ color: #313133;
+ background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+ font-size: 18px;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ padding: 8px 20px;
+ margin: 0 15px;
+ border: none;
+ border-radius: 50px;
+ position: relative;
+ z-index: 1;
+ transition: all 0.3s ease-in-out 0s;
+}
+.btn:focus,
+.btn:hover{
+ color: #313133;
+ background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+ transform: translateY(-6px);
+}
+.btn:before{
+ content: '';
+ min-width: calc(100% + 17px);
+ min-height: calc(100% + 17px);
+ border-radius: 50px;
+ border: 5px solid #00FFCB;
+ box-shadow: 0 0 40px rgba(0,255,203,.7);
+ opacity: 0;
+ transform: translateX(-50%) translateY(-50%) scale(0.5);
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transition: all .3s ease-in-out 0s;
+}
+.btn:hover:before{
+ opacity: 1;
+ transform: translateX(-50%) translateY(-50%) scale(1);
+}
+@media only screen and (max-width: 767px){
+ .btn{ margin-bottom: 30px; }
+}
+        </style>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <a href="/about"><button type="button" class="btn btn-primary btn-lg px-4 gap-3">Жми сюда и узнаешь больше обо мне!</button></a>
+              <a href="/friends"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Тут я рассказываю о моих друзьях</button></a>
+              <a href="/add_friends"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Чтобы добавить друга, нужно нажать сюда</button></a>
+          </div>
+        <br><br>
+        <img src="{{ url_for('static', filename='images/foto.jpg') }}">
+    </div>
+</div>
+{% endblock %}

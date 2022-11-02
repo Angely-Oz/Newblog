@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Мои рассказы
+{% endblock %}
+
+{% block  body %}
+<div class="p-3 mb-2 bg-success text-white">
+  <div class="container px-4">
+    <a href="/add_about" class="btn btn-danger my-2">Добавить пост</a>
+  </div>
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom text-light">Рассказы обо мне, моих увлечениях, животных и т.д.</h2>
+    {% for a in articles %}
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+          <div>
+            <h3 class="fs-2">{{ a.title }}</h3>
+            <p><h6>{{ a.intro }}</h6>
+            <a href="/about/{{ a.id_a }}" class="btn btn-danger">Читать</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+

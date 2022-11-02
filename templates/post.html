@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{article.title}}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>{{article.title}}</h1>
+    <h4>{{article.text}}</h4>
+    <a href="/about/{{ article.id_a }}/delete_post" class="btn btn-danger">Удалить</a>
+    <a href="/about/{{ article.id_a }}/update_post" class="btn btn-danger">Редактировать</a>
+</div>
+{% endblock %}
+
